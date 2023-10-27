@@ -123,7 +123,7 @@ model.update_file(H_opt, w_opt)
 ```
 
 
-If the sparse GAM is not available, we can first use sparse GAM algorithms to get an initial model. In our experiments, we use [FastSparse](https://arxiv.org/abs/2202.11389)  to generate the sparse GAM and then postprocess the obtained model into the json object above. Please see the [prepare_gam.py](https://github.com/chudizhong/GAMsRashomonSet/main/src/prepare_gam.py) for more details. Information about how to install and run FastSparse can be found in its repo (https://github.com/jiachangliu/fastSparse). Other sparse GAM algorithms where shape functions are step functions can be used to generate the initial model. 
+If the sparse GAM is not available, we can first use sparse GAM algorithms to get an initial model. In our experiments, we use [FastSparse](https://arxiv.org/abs/2202.11389)  to generate the sparse GAM and then postprocess the obtained model into the json object above. Please see the [prepare_gam.py](https://github.com/chudizhong/GAMsRashomonSet/blob/main/src/prepare_gam.py) for more details. Information about how to install and run FastSparse can be found in its repo (https://github.com/jiachangliu/fastSparse). Other sparse GAM algorithms where shape functions are step functions can be used to generate the initial model. 
 
 
 
