@@ -40,7 +40,7 @@ This code can be used to find the Rashomon set when a sparse generalized additiv
 }
 ```
 
-An example json object is available in ``diabetes_0.001_0.001_1.01.p``. 
+An example JSON object is available in ``diabetes_0.001_0.001_1.01.p``. 
 
 **data_file**
  - Type: string 
@@ -83,11 +83,11 @@ An example json object is available in ``diabetes_0.001_0.001_1.01.p``.
 
 **w_orig**
  - Type: numpy array of length p
- - Description: weights of steps in shape functions. It is used as an intialization for finding the Rashomon set. 
+ - Description: weights of steps in shape functions. It is used as an initialization for finding the Rashomon set. 
 
 **hessian**
  - Type: (p, p) numpy array
- - Description: the hessian matrix. It is used as an initialization for finding the Rashomon set. 
+ - Description: the Hessian matrix. It is used as an initialization for finding the Rashomon set. 
 
 **log_loss_orig**
  - Type: float
@@ -103,7 +103,7 @@ An example json object is available in ``diabetes_0.001_0.001_1.01.p``.
  - Description: the upper bound of the loss for the Rashomon set, i.e. ```log_loss_orig * multiplier```
 
 
-Once the sparse GAM is available as a json object, we can directly run ``RsetOPT`` to get its Rashomon set. Suppose we store the json object in a pickle file named ``diabetes_0.001_0.001_1.01.p``, we can run the following code to get the Rashomon set. 
+Once the sparse GAM is available as a JSON object, we can directly run ``RsetOPT`` to get its Rashomon set. Suppose we store the json object in a pickle file named ``diabetes_0.001_0.001_1.01.p``, we can run the following code to get the Rashomon set. 
 ```
 import numpy as np
 import pandas as pd
@@ -123,14 +123,14 @@ model.update_file(H_opt, w_opt)
 ```
 
 
-If the sparse GAM is not available, we can first use sparse GAM algorithms to get an initial model. In our experiments, we use [FastSparse](https://arxiv.org/abs/2202.11389)  to generate the sparse GAM and then postprocess the obtained model into the json object above. Please see the [prepare_gam.py](https://github.com/chudizhong/GAMsRashomonSet/blob/main/src/prepare_gam.py) for more details. Information about how to install and run FastSparse can be found in its repo (https://github.com/jiachangliu/fastSparse). Other sparse GAM algorithms where shape functions are step functions can be used to generate the initial model. 
+If the sparse GAM is not available, we can first use sparse GAM algorithms to get an initial model. In our experiments, we use [FastSparse](https://arxiv.org/abs/2202.11389)  to generate the sparse GAM and then postprocess the obtained model into the JSON object above. Please see the [prepare_gam.py](https://github.com/chudizhong/GAMsRashomonSet/blob/main/src/prepare_gam.py) for more details. Information about how to install and run FastSparse can be found in its repo (https://github.com/jiachangliu/fastSparse). Other sparse GAM algorithms where shape functions are step functions can be used to generate the initial model. 
 
 
 
 
 ## Applications of the Rashomon set
 
-The GAM Rashomon set can be used for diverse applications. We show examples for 5 different applications in the ``example_rset_application.ipynb``. 
+The GAM Rashomon set can be used for diverse applications. We show examples for 5 different applications in the [example_rset_application.ipynb](https://github.com/chudizhong/GAMsRashomonSet/blob/main/example_rset_application.ipynb). 
 
 - Application 1: get different GAM models from the Rashomon set. 
 - Application 2: get variable importance range. 
