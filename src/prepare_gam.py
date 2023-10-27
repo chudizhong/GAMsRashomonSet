@@ -89,7 +89,7 @@ def prepare_sparse_gam(dname, lamb0, lamb2, multiplier):
     H = utils.hessian(w_new, X_new, y, lamb2, sample_p)
 
 
-    outfile = "results/{}_{}_{}_{}.p".format(dname, lamb0, lamb2, multiplier)
+    outfile = "{}_{}_{}_{}.p".format(dname, lamb0, lamb2, multiplier)
     eps = log_loss * multiplier
     print("m:{}, log objective:{}, eps:{}".format(multiplier, log_loss, eps))
 
